@@ -23,7 +23,7 @@ try{
                                 
                                 var req = unirest("GET", "http://api.openweathermap.org/data/2.5/weather");
 
-                                var location = bodyContent.queryResult.parameters["location"];
+                                var location = bodyContent.queryResult.parameters["geo-city"];
 
                                 req.query({
                                     "q": location,
