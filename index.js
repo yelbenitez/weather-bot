@@ -50,7 +50,7 @@ try{
 
                                         let output = "today in "+ location +": "+ weather + ", temperature from " + Math.round(temp_min)  + "°C to " + Math.round(temp_max) + "°C , wind " + wind + "m/s. clouds " + clouds + "% " + pressure+" hpa";
 
-                                          response.setHeader('Content-Type', 'application/json');
+                                          response.setHeader('Content-Type', 'application/json', 'charset=utf-8');
                                           var pass = {
                                             fulfillmentText : output
                                           }   
