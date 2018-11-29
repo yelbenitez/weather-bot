@@ -1,0 +1,23 @@
+{
+  "name": "weather-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yellyyy/weather-bot.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yellyyy/weather-bot/issues"
+  },
+  "homepage": "https://github.com/yellyyy/weather-bot#readme",
+  "dependencies": {
+    "restify": "^7.2.3",
+    "unirest": "^0.5.1"
+  }
+}
