@@ -47,8 +47,8 @@ try{
                                         let wind = result.wind['speed'];
                                         let clouds = result.clouds['all'];
                                         let pressure = result.main['pressure'];
-
-                                        let output = "today in "+ location +": "+ weather + ", temperature from " + Math.round(temp_min)  + "°C to " + Math.round(temp_max) + "°C , wind " + wind + "m/s. clouds " + clouds + "% " + pressure+" hpa";
+                                        let degree = String.fromCharCode(176);
+                                        let output = "today in "+ location +": "+ weather + ", temperature from " + Math.round(temp_min)  +""+degree+"C to " + Math.round(temp_max) + "°C , wind " + wind + "m/s. clouds " + clouds + "% " + pressure+" hpa";
 
                                           response.setHeader('Content-Type', 'application/json', 'charset=utf-16');
                                           var pass = {
