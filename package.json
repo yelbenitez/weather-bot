@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/yellyyy/weather-bot#readme",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "restify": "^7.2.3",
     "unirest": "^0.5.1"
   }
