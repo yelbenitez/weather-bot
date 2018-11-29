@@ -19,7 +19,7 @@ try{
 
             switch(bodyContent.queryResult.intent["displayName"]){
                   case 'Weather Forecast':
-                        if(bodyContent.queryResult.parameters["location"]){
+                        if(bodyContent.queryResult.parameters["geo-city"]){
                                 
                                 var req = unirest("GET", "http://api.openweathermap.org/data/2.5/weather");
 
