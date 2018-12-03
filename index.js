@@ -47,7 +47,7 @@ try{
                                         let wind = result.wind['speed'];
                                         let clouds = result.clouds['all'];
                                         let pressure = result.main['pressure'];
-                                        let output = "today in "+ location +": "+ weather + ", temperature from " + Math.round(temp_min)  +"C to " + Math.round(temp_max) + "C , wind " + wind + "m/s. clouds " + clouds + "% " + pressure+" hpa";
+                                        let output = "today in "+ location +": "+ weather + ", temperature from " + Math.round(temp_min)  +" Celsius to " + Math.round(temp_max) + " Celsius , wind " + wind + "m/s. clouds " + clouds + "% " + pressure+" hpa";
 
                                           response.setHeader('Content-Type', 'application/json', 'charset=utf-16');
                                           var pass = {
@@ -81,33 +81,30 @@ try{
                                                 }            
                                     response.send(pass);
                                 } else if(res.body.list.length > 0) {
+                                    var days= ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
                                     var date = new Date();
                                     var month = date.getUTCMonth() + 1; 
                                     var day = date.getUTCDate();
                                     var year = date.getUTCFullYear();
+                                
 
                                     // get the succeding 4 next days 
 
-                                    
+                                    var day_pointer = new Date();
                                     let result = res.body.list;
                                     let forecast = '';
-                                    
+                                    var counter = 0;
+                                   
+
                                     for(let x = 0; x<result.length;x++){
                                       var temp = new Date(result[x].dt_txt);
-                                        
-                                      if(x!=result.length-1){
-                                            if(temp.getHours()==12){
-                                                forecast += result[x].dt_txt;
+
+                                            if(days[day_pointer.getDay()+counter]==days[temp.getDay()]){
+                                                forecast +=  days[temp.getDay()] + " " + result[x].dt_txt + " : " +  result[x].weather[0].description+"  ";
+                                                counter = counter + 1;
                                             }
-                                      }else{
-                                         forecast += result[x].dt_txt;
-                                      }
-                                        
-                                        /*  if(x%6==0){
-                                            forecast += result[x].dt_txt;
-                                        }*/
                                     }
-                                    /*
+                                    /*  
                                     let result = res.body;
                                     let weather = result.weather[0].description;
                                     let temp_min = result.main['temp_min'] - 273.15;
@@ -122,7 +119,7 @@ try{
                                         fulfillmentText : output
                                     }   
                                     response.send(pass); */
-                                    response.setHeader('Content-Type', 'application/json', 'charset=utf-16');
+                                    response.setHeader('Content-Type', 'application/json','text/html');
                                     var pass = {
                                         fulfillmentText : forecast
                                     }   
