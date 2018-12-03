@@ -101,7 +101,7 @@ try{
 
                                             if(days[day_pointer.getDay()+counter]==days[temp.getDay()]){
                                                 var temp_date = temp.getMonth() + 1 +"/" + temp.getDate() +"/"+ temp.getFullYear();
-                                                forecast +=  days[temp.getDay()] + " " + temp_date + " : " +  result[x].weather[0].description+" \n ";
+                                                forecast +=  days[temp.getDay()] + " " + temp_date + " : " +  result[x].weather[0].description+" \r\n ";
                                                 counter = counter + 1;
                                             }
                                     }
