@@ -35,8 +35,8 @@ try{
                                     if(res.body['cod']=='404') {
                                         response.setHeader('Content-Type', 'application/json');
                                         var pass = {
-                                                      fulfillmentText: 'Wait, something went wrong'
-                                                    }            
+                                                      fulfillmentText: 'Sorry, Please enter a specific area like city'
+                                                }            
                                         response.send(pass);
                                     } else if(res.body.weather.length > 0) {
 
@@ -74,10 +74,10 @@ try{
 
                             req.send("{}");
                             req.end(function(res) {
-                                if(res.error) {
+                                if(res.body['cod']=='404') {
                                     response.setHeader('Content-Type', 'application/json');
                                     var pass = {
-                                                fulfillmentText: 'Wait, something went wrong'
+                                                  fulfillmentText: 'Sorry, Please enter a specific area like city'
                                                 }            
                                     response.send(pass);
                                 } else if(res.body.list.length > 0) {
