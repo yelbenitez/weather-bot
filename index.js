@@ -32,7 +32,7 @@ try{
 
                                 req.send("{}");
                                 req.end(function(res) {
-                                    if(res.error) {
+                                    if(res.body['cod']=='404') {
                                         response.setHeader('Content-Type', 'application/json');
                                         var pass = {
                                                       fulfillmentText: 'Wait, something went wrong'
